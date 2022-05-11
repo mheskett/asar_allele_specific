@@ -79,7 +79,7 @@ awk -v var="$filter_size" -v var2="$filename" -v var3="$library_size" '{OFS="\t"
 	bedtools coverage -a stdin -b /home/groups/Spellmandata/heskett/replication.rnaseq/annotation.files/ucsc.L1.filtered.hg19.bed -F 0.9 |
 	awk -v var3="$library_size" 'OFS="\t"{print $1, $2, $3, $4, $5 / ( ($3-$2)/1000 ), "-", $9}' > $out_dir$filename.intergenic.minus.$first_merge.$second_merge.$filter_size.vlinc.discovery.bed
 
-## create a	new file specifically in the genome browser format
+## create a new file specifically in the genome browser format
 awk 'OFS="\t"{print "chr"$1, $2, $3, $4, 0, $6}' $out_dir$filename.intergenic.plus.$first_merge.$second_merge.$filter_size.vlinc.discovery.bed | grep -v chrGL | grep -v chrKI > $out_dir$filename.intergenic.$first_merge.$second_merge.$filter_size.vlinc.discovery.plus.browser.bed
 awk 'OFS="\t"{print "chr"$1, $2, $3, $4, 0, $6}' $out_dir$filename.intergenic.minus.$first_merge.$second_merge.$filter_size.vlinc.discovery.bed | grep -v chrGL | grep -v chrKI > $out_dir$filename.intergenic.$first_merge.$second_merge.$filter_size.vlinc.discovery.minus.browser.bed
 
