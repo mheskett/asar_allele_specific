@@ -140,7 +140,7 @@ chromosome_length = {"1":249250621,
 "X":155270560}
 
 ### rtQTLs from Koren et al 2014, Cell.
-rtqtls = pd.read_csv("test123.txt",index_col=False,sep="\t",
+rtqtls = pd.read_csv("rtqtls.txt",index_col=False,sep="\t",
     names=["rtQTL","replicatio_variant","chrom","position","-log10_p_value","associated_region_start", 
             "associated_region_end","associate_region_length", "affected_region_start",   
             "affected_region_end", "affected_region_length","distance_to_rep_peak"],
